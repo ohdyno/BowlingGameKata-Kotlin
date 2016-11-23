@@ -1,8 +1,8 @@
 class Game {
-    var rolls = IntArray(21) {0}
+    val rolls = IntArray(21) {0}
     var currentRoll = 0
 
-    var score = 0
+    val score : Int
         get() {
             var score = 0
             var frameIndex = 0

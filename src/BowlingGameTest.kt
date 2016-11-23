@@ -3,7 +3,7 @@ import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
 
 class BowlingGameTest {
-    private var game: Game? = null
+    private lateinit var game: Game
 
     @BeforeMethod
     fun setUp() {
@@ -11,37 +11,37 @@ class BowlingGameTest {
     }
 
     @Test fun testGutterGame() {
-        game?.rollMany(n = 20, pins = 0)
-        assertEquals(game?.score, 0)
+        game.rollMany(n = 20, pins = 0)
+        assertEquals(game.score, 0)
     }
 
     @Test
     fun testAllOnes() {
-        game?.rollMany(n = 20, pins = 1)
-        assertEquals(game?.score, 20)
+        game.rollMany(n = 20, pins = 1)
+        assertEquals(game.score, 20)
     }
 
     @Test
     fun testOneSpare() {
-        game?.rollSpare()
-        game?.roll(3)
-        game?.rollMany(n = 17, pins = 0)
-        assertEquals(game?.score, 16)
+        game.rollSpare()
+        game.roll(3)
+        game.rollMany(n = 17, pins = 0)
+        assertEquals(game.score, 16)
     }
 
     @Test
     fun testOneStrike() {
-        game?.rollStrike()
-        game?.roll(3)
-        game?.roll(4)
-        game?.rollMany(16, 0)
-        assertEquals(game?.score, 24)
+        game.rollStrike()
+        game.roll(3)
+        game.roll(4)
+        game.rollMany(16, 0)
+        assertEquals(game.score, 24)
     }
 
     @Test
     fun testPerfectGame() {
-        game?.rollMany(n = 12, pins = 10)
-        assertEquals(game?.score, 300)
+        game.rollMany(n = 12, pins = 10)
+        assertEquals(game.score, 300)
     }
 
     private fun Game.rollMany(n: Int, pins: Int) {
