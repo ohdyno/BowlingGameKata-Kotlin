@@ -1,5 +1,7 @@
 package me.ohdyno.katas.BowlingGame
 
+private const val MAX_FRAMES = 10
+
 class Game {
     val rolls = IntArray(21) {0}
     var currentRoll = 0
@@ -8,7 +10,7 @@ class Game {
         get() {
             var score = 0
             var frameIndex = 0
-            (1..10).forEach {
+            (1..MAX_FRAMES).forEach {
                 when {
                     isSpare(frameIndex) -> {
                         score += scoreSpare(frameIndex)
