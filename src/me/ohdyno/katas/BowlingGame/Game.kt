@@ -1,3 +1,5 @@
+package me.ohdyno.katas.BowlingGame
+
 class Game {
     val rolls = IntArray(21) {0}
     var currentRoll = 0

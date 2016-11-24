@@ -1,3 +1,5 @@
+package me.ohdyno.katas.BowlingGame
+
 import org.testng.Assert.assertEquals
 import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
